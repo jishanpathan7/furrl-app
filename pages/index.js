@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
 import styles from "@/styles/Home.module.css";
-// import OrgChart from "@/components/OrgChart";
 import jsonData from "@/data.json";
 
 const DynamicOrgChart = dynamic(() => import("@/components/OrgChart"), {

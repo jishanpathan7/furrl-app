@@ -3,7 +3,6 @@ import React from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 import orgChartStyles from "./OrgChart.module.css";
 import Avatar from "@mui/material/Avatar";
-import EditIcon from "@mui/icons-material/Edit";
 
 const OrgChart = ({ data }) => {
   const renderNode = ({ node }) => (
@@ -16,13 +15,7 @@ const OrgChart = ({ data }) => {
             background: "#db9adb",
           }}
         />
-        <EditIcon
-          className={orgChartStyles.editIcon}
-          style={{
-            width: "20px",
-            height: "20px",
-          }}
-        />
+      
       </div>
       <div>
         <div className={orgChartStyles.name}>{node.name}</div>
@@ -54,9 +47,14 @@ const OrgChart = ({ data }) => {
       lineWidth={"2px"}
       lineColor={"gray"}
       lineBorderRadius={"10px"}
-      label={<div className={orgChartStyles.node}>Root</div>}
+      label={
+        <div className={orgChartStyles.node}>
+          {renderNode({ node: data[0] })}
+        </div>
+      }
     >
-      {data.map((employee, index) => renderTree(employee, index === 0))}
+      {/* {data.map((employee, index) => renderTree(employee, index))} */}
+      {data.map((employee, index) =>  renderTree(employee, index))}
     </Tree>
   );
 };
