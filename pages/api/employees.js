@@ -1,6 +1,4 @@
-// pages/api/employees.js
-import  data  from '../../data.js'; // Import your sample data
-
+import { ORGDATA } from "../../data";
 export default function handler(req, res) {
-  res.status(200).json(data);
+  res.status(200).json(ORGDATA);
 }
