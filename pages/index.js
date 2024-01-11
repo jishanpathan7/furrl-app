@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
-import styles from "@/styles/Home.module.css";
-import jsonData from "@/data.json";
 
 const DynamicOrgChart = dynamic(() => import("@/components/OrgChart"), {
   ssr: false, // Disable server-side rendering for this component
@@ -19,8 +17,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <DynamicOrgChart data={jsonData} />
+      <main className={`${inter.className}`}>
+        <DynamicOrgChart />
       </main>
     </>
   );
