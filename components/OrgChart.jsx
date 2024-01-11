@@ -49,7 +49,7 @@ const OrgChart = () => {
     // Simulating API call delay
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/employees");
+        const response = await fetch("/api/employees");
         const data = await response.json();
         setData(data);
       } catch (error) {
